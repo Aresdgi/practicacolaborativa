@@ -1,4 +1,4 @@
-from main import sumar, restar, multiplicar
+from operaciones import sumar, restar, multiplicar, dividir
 
 def mostrar_menu():
     while True:  # El ciclo continuará hasta que el usuario elija salir
@@ -38,6 +38,8 @@ def mostrar_menu():
                 resultado = restar(num1, num2)
             elif opcion == '3':
                 resultado = multiplicar(num1, num2)
+            elif opcion == '4':
+                resultado = dividir(num1, num2)
             else:
                 print("Opción no implementada.")
                 continue
