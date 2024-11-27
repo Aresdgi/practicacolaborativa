@@ -29,6 +29,7 @@ def dividir(dividendo, divisor):
     # Verificar que el divisor no sea cero
     if divisor == 0:
         return "El divisor no puede ser cero"
+
     
     # Convertir los valores a números enteros para las iteraciones (si son flotantes)
     dividendo = abs(dividendo)
@@ -44,3 +45,13 @@ def dividir(dividendo, divisor):
     
     # Devolver el resultado de la división
     return cociente
+
+def factorial_recursivo(n):
+    if not isinstance(n, int):
+        raise ValueError("El valor debe ser un entero")
+    if n < 0:
+        raise ValueError("El valor debe ser un entero no negativo")
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial_recursivo(n - 1)
+
