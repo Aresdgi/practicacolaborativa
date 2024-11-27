@@ -10,6 +10,7 @@ def mostrar_menu():
         print("5. Salir")
         print("6. Factorial iterativo")
         print("7. Calcular factorial de un numero recursivo")
+        print("8- Calcular el fibonacci de un numero(iterativo)")
 
 
         # Solicitar opción al usuario
