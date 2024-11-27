@@ -1,4 +1,4 @@
-from operaciones import sumar, restar, multiplicar, dividir, factorial_recursivo, factorial_iterativo
+from operaciones import sumar, restar, multiplicar, dividir, factorial_recursivo, factorial_iterativo, fibonacci
 
 def mostrar_menu():
     while True:  # El ciclo continuará hasta que el usuario elija salir
@@ -10,13 +10,13 @@ def mostrar_menu():
         print("5. Salir")
         print("6. Factorial iterativo")
         print("7. Calcular factorial de un numero recursivo")
-
+        print("8. Calcular el fibonacci de un numero (iterativo)")
 
         # Solicitar opción al usuario
         opcion = input("Ingrese el número de la opción: ")
 
         # Verificar si la opción seleccionada es válida
-        if opcion not in ['1', '2', '3', '4', '5', '6', '7']:
+        if opcion not in ['1', '2', '3', '4', '5', '6', '7', '8']:
             print("Opción inválida. Intente de nuevo.")
             continue  # Si la opción es inválida, vuelve a mostrar el menú
 
@@ -24,25 +24,14 @@ def mostrar_menu():
         if opcion == '5':
             print("Saliendo del programa...")
             break
-        
-        # Si la opción es 6, solicitar un número
-        if opcion == '7':
-            try:
-                num1 = float(input("Ingrese el número: "))
-            except ValueError:
-                print("Entrada no válida. Debe ingresar un número.")
-                continue
-            try:
-                resultado = factorial_recursivo(num1)
-                print(f"El resultado es: {resultado}")
-            except ValueError as e:
-                print(e)
-            continue
 
-        # Si la opción no es salir, solicitar dos números
+        # Si la opción no es salir, solicitar los números necesarios
         try:
-            num1 = int(input("Ingrese el primer número: "))
-            num2 = float(input("Ingrese el segundo número: "))
+            if opcion in ['1', '2', '3', '4']:
+                num1 = float(input("Ingrese el primer número: "))
+                num2 = float(input("Ingrese el segundo número: "))
+            elif opcion in ['6', '7', '8']:
+                num1 = int(input("Ingrese el número: "))
         except ValueError:
             print("Entrada no válida. Debe ingresar un número.")
             continue
@@ -58,9 +47,11 @@ def mostrar_menu():
             elif opcion == '4':
                 resultado = dividir(num1, num2)
             elif opcion == '6':
-                resultado = factorial_iterativo(num1, num2)
+                resultado = factorial_iterativo(num1)
             elif opcion == '7':
-                resultado = factorial_recursivo(num1);
+                resultado = factorial_recursivo(num1)
+            elif opcion == '8':
+                resultado = fibonacci(num1)
             else:
                 print("Opción no implementada.")
                 continue
@@ -68,4 +59,3 @@ def mostrar_menu():
             print(f"El resultado es: {resultado}")
         except ValueError as e:
             print(e)
-            
