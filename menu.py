@@ -1,4 +1,4 @@
-from operaciones import sumar, restar, multiplicar, dividir, factorial_recursivo
+from operaciones import sumar, restar, multiplicar, dividir, factorial_recursivo, factorial_iterativo
 
 def mostrar_menu():
     while True:  # El ciclo continuará hasta que el usuario elija salir
@@ -8,13 +8,15 @@ def mostrar_menu():
         print("3. Multiplicar")
         print("4. Dividir")
         print("5. Salir")
-        print("6. Calcular factorial de un numero")
+        print("6. Factorial iterativo")
+        print("7. Calcular factorial de un numero recursivo")
+
 
         # Solicitar opción al usuario
         opcion = input("Ingrese el número de la opción: ")
 
         # Verificar si la opción seleccionada es válida
-        if opcion not in ['1', '2', '3', '4', '5', '6']:
+        if opcion not in ['1', '2', '3', '4', '5', '6', '7']:
             print("Opción inválida. Intente de nuevo.")
             continue  # Si la opción es inválida, vuelve a mostrar el menú
 
@@ -24,7 +26,7 @@ def mostrar_menu():
             break
         
         # Si la opción es 6, solicitar un número
-        if opcion == '6':
+        if opcion == '7':
             try:
                 num1 = float(input("Ingrese el número: "))
             except ValueError:
@@ -56,6 +58,8 @@ def mostrar_menu():
             elif opcion == '4':
                 resultado = dividir(num1, num2)
             elif opcion == '6':
+                resultado = factorial_iterativo(num1, num2)
+            elif opcion == '7':
                 resultado = factorial_recursivo(num1);
             else:
                 print("Opción no implementada.")

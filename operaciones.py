@@ -55,3 +55,23 @@ def factorial_recursivo(n):
         return 1
     return n * factorial_recursivo(n - 1)
 
+def factorial_iterativo(n):
+    # Comprobamos que el valor sea un entero
+    if not isinstance(n, int):
+        raise ValueError("El valor debe ser un número entero.")
+    
+    # Comprobamos que el número sea no negativo
+    if n < 0:
+        raise ValueError("El número debe ser mayor o igual a 0.")
+    
+    # Caso base para el factorial de 0 o 1
+    if n == 0 or n == 1:
+        return 1
+    
+    # Cálculo del factorial de manera iterativa
+    resultado = 1
+    for i in range(2, n + 1):
+        resultado *= i
+    
+    return resultado
+
