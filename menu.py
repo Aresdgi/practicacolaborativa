@@ -68,3 +68,4 @@ def mostrar_menu():
             print(f"El resultado es: {resultado}")
         except ValueError as e:
             print(e)
+            
